@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'dynamic-components';
+  page : string = 'home';
+  selectPage(page : string){
+    this.page = page;
+  }
 }

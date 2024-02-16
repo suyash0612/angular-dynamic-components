@@ -1,0 +1,42 @@
+<div class="container">
+    <h1>User Page</h1>
+    <button (click)="onGetUsers()">Show User List</button>
+    <div *ngIf="showUserTable"
+        class="table-responsive"
+    >
+        <table
+            class="table table-primary"
+        >
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Membership</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userlist">
+                    <td>{{user.name}}</td>
+                    <td>{{user.gender}}</td>
+                    <td>{{user.membership}}</td>
+                    <td>{{user.price}}</td>
+                    <td>{{user.status}}</td>
+                    <td><button (click)="onDelUser(user)">delete</button></td>
+                </tr>
+                <tr>
+                    <td><input type="text" [(ngModel)]="newUser.name"></td>
+                    <td><input type="text" [(ngModel)]="newUser.gender"></td>
+                    <td><input type="text" [(ngModel)]="newUser.membership"></td>
+                    <td><input type="number" [(ngModel)]="newUser.price"></td>
+                    <td><input type="text" [(ngModel)]="newUser.status"></td>
+                    <td><button (click)="storeUser()">add</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+  </div>
+  
