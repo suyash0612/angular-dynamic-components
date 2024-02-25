@@ -36,6 +36,7 @@
                 </tr>
             </tbody>
         </table>
+        <app-confirm-delete *ngIf="confirmUserDel" [delTheUser]="userToDel" (onConfirm)="onUserDelAction($event)"></app-confirm-delete>
     </div>
     
   </div>

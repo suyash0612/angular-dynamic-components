@@ -11,6 +11,8 @@ export class UsersComponent {
   // user : User = new User("Suyash Sawant", "Male" , "Yearly", 999, "Inactive");
   userlist :User[] = [];
   showUserTable : boolean = false;
+  confirmUserDel : boolean = false;
+  userToDel : User;
   newUser : any = {};
 
 
@@ -23,11 +25,23 @@ export class UsersComponent {
   }
 
   onDelUser(user : User){
-    console.log(user);
-    this.userservice.deleteUserFromList(user);
+    this.confirmUserDel = true;
+    this.userToDel = user;
+    // this.userservice.deleteUserFromList(user);
   }
 
   storeUser(){
     this.userservice.onPushUser(this.newUser);
+  }
+
+  onUserDelAction(val : boolean){
+    this.confirmUserDel = val;
+    if(true){
+      this.userservice.deleteUserFromList(this.userToDel);
+      this.confirmUserDel = false;
+    }
+    else{
+
+    }
   }
 }

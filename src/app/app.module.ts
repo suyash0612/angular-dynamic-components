@@ -6,12 +6,14 @@ import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { UserService } from './Services/user.services';
 import { FormsModule } from '@angular/forms';
+import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    UsersComponent
+    UsersComponent,
+    ConfirmDeleteComponent
   ],
   imports: [
     BrowserModule,

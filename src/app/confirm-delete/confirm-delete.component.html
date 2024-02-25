@@ -1,0 +1,9 @@
+<div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" (click)="cancelDelete()">&times;</span>
+      <h2>Delete Confirmation</h2>
+      <p>Are you sure you want to delete <b>{{delTheUser.name}}</b> ?</p>
+      <button (click)="confirmDelete()">Confirm</button>
+      <button (click)="cancelDelete()">Cancel</button>
+    </div>
+</div>
